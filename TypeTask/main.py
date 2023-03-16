@@ -8,7 +8,7 @@ set_printoptions(precision=3)
 N = int(input("Ваш вариант: "))
 
 # Генерируем матрицу
-MATRIX = array([
+MATRIX = matrix([
     [N, 4*N, N+2, N, N, N],
     [0, N+1, N, N, N+1, 2],
     [2*N, N, N+2, 2*N, 3*N, N+1],
@@ -19,7 +19,6 @@ MATRIX = array([
 
 # Находим определитель матрицы
 DET          = int(linalg.det(MATRIX))
-
 
 MATRIX_UNION = f"{N} * {MATRIX / N}"
 
@@ -45,5 +44,11 @@ MATRIX_MULTIPLY_D_I = MATRIX * MATRIX_INVERT
 MATRIX_EIG_W, MATRIX_EIG_V = linalg.eig(MATRIX)
 
 # Проиизводим LU-разложение матрицы
-P, MATRIX_L, MATRIX_U      = scipy.linalg.lu(MATRIX)
-print(MATRIX_L @ MATRIX_U)
+P, L, U      = scipy.linalg.lu(MATRIX)
+MATRIX_LU = L @ U
+
+# print(MATRIX)
+print(L)
+print(U)
+# print(MATRIX_INVERT)
+print(MATRIX_LU)
