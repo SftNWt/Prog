@@ -2,12 +2,6 @@ from numpy import *
 import math
 import scipy
 
-import colorama
-from colorama import Fore, Back, Style, init as coloramaInit
-
-coloramaInit(autoreset=True)
-
-
 def forward_elimination(Matrix_A, Matrix_B, matrix_shape, output):
 
     # ?------------------------ Calculation Block ------------------------
